@@ -1,0 +1,317 @@
+---
+layout: default
+---
+
+    <section id="slider" class="slider-parallax swiper_wrapper clearfix">
+
+      <div class="swiper-container swiper-parent">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide dark" style="background-image: url('images/slider/full/dombrasil4.jpg'); background-position: center top;">
+            <div class="container clearfix">
+              <div class="slider-caption">
+                <h2 data-caption-animate="fadeInUp">DOM Brasil</h2>
+                <p data-caption-animate="fadeInUp" data-caption-delay="600">Tenha melhores resultados organizacionais com um sistema simples, rápido e prático!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        jQuery(document).ready(function($){
+          var swiperSlider = new Swiper('.swiper-parent',{
+            paginationClickable: false,
+            slidesPerView: 1,
+            grabCursor: false,
+            loop: false,
+            onSwiperCreated: function(swiper){
+              $('[data-caption-animate]').each(function(){
+                var $toAnimateElement = $(this);
+                var toAnimateDelay = $(this).attr('data-caption-delay');
+                var toAnimateDelayTime = 0;
+                if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 750; } else { toAnimateDelayTime = 750; }
+                if( !$toAnimateElement.hasClass('animated') ) {
+                  $toAnimateElement.addClass('not-animated');
+                  var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                  setTimeout(function() {
+                    $toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+                  }, toAnimateDelayTime);
+                }
+              });
+              SEMICOLON.slider.swiperSliderMenu();
+            },
+            onSlideChangeStart: function(swiper){
+              $('[data-caption-animate]').each(function(){
+                var $toAnimateElement = $(this);
+                var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                $toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+              });
+              SEMICOLON.slider.swiperSliderMenu();
+            },
+            onSlideChangeEnd: function(swiper){
+              $('#slider').find('.swiper-slide').each(function(){
+                if($(this).find('video').length > 0) { $(this).find('video').get(0).pause(); }
+                if($(this).find('.yt-bg-player').length > 0) { $(this).find('.yt-bg-player').pauseYTP(); }
+              });
+              $('#slider').find('.swiper-slide:not(".swiper-slide-active")').each(function(){
+                if($(this).find('video').length > 0) {
+                  if($(this).find('video').get(0).currentTime != 0 ) $(this).find('video').get(0).currentTime = 0;
+                }
+                if($(this).find('.yt-bg-player').length > 0) {
+                  $(this).find('.yt-bg-player').getPlayer().seekTo( $(this).find('.yt-bg-player').attr('data-start') );
+                }
+              });
+            }
+          });
+
+        });
+      </script>
+    </section>
+      
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+      
+      <div class="content-wrap">
+        <div class="container clearfix">
+          <div class="line notopmargin nobotmargin"></div>
+            <div class="row clearfix">
+              <div class="col-md-4 center bottommargin" data-animate="fadeIn" data-delay="10">
+                <span class="i-plain color i-large icon-line2-trophy inline-block"></span>
+                <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                  <h4>Descomplicado e Prático</h4>
+                </div>
+                <p>Atendimento personalizado, suporte 24 horas, modelo intuitivo e analítico. Faça uma degustação e veja você mesmo.</p>
+              </div>
+
+              <div class="col-md-4 center bottommargin" data-animate="fadeIn" data-delay="200">
+                <i class="i-plain color i-large icon-line2-screen-desktop inline-block"></i>
+                <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                  <h4>Solução Completa</h4>
+                </div>
+                <p>Gestão personalizada para o seu modelo de negócios. Praticidade e velocidade no processo de escolha de profissionais e desenho de cargos.</p>
+              </div>
+              
+              <div class="col-md-4 center bottommargin" data-animate="fadeIn" data-delay="400">
+                <i class="i-plain color i-large icon-line2-user inline-block"></i>
+                <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                  <h4>Benefícios</h4>
+                </div>
+                <p>Recursos Humanos com foco em resultados, indicadores robustos para processos e ações estratégicas. </p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="promo promo-light">
+            <div class="container center clearfix">
+              <div class="container clearfix  bottommargin notopmargin">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lLrPZR_7w5I" frameborder="15" style="left: 5%; top: 25px; transform: none;"  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container  clearfix">
+            <div class="nobottommargin" style="padding-bottom: 15px;"></div>
+            <h3 class="center">Serviços</h3>
+
+            <div id="oc-portfolio" class="portfolio-carousel">
+
+              <div class="oc-item">
+                <div class="iportfolio">
+                  <div class="portfolio-image">
+                    <a href="res.html">
+                      <img src="images/services/R&S.png" alt="Dom Brasil Modulo Basico">
+                    </a>
+                  </div>
+                  <div class="portfolio-desc center">
+                    <h3><a href="portfolio-single.html"> R&S </a></h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="oc-item">
+                <div class="iportfolio">
+                  <div class="portfolio-image">
+                    <a href="desenvolvimento.html">
+                      <img src="images/services/desenvolvimento.png" alt="Dom Brasil Modulo Avancado">
+                    </a>
+                  </div>
+                  <div class="portfolio-desc center">
+                    <h3><a href="portfolio-single.html">Desenvolvimento</a></h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="oc-item">
+                <div class="iportfolio">
+                  <div class="portfolio-image">
+                    <a href="carreira.html">
+                      <img src="images/services/carreira.png" alt="Dom Brasil Consultoria">
+                    </a>
+                  </div>
+                  <div class="portfolio-desc center">
+                    <h3><a href="portfolio-single.html">Carreira</a></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript">
+
+              jQuery(document).ready(function($) {
+
+                var ocPortfolio = $("#oc-portfolio");
+
+                ocPortfolio.owlCarousel({
+                  margin: 1,
+                  loop: false,
+                  nav: false,
+                  navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                  autoplay: false,
+                  autoplayHoverPause: true,
+                  dots: true,
+                  responsive:{
+                    0:{ items:1 },
+                    600:{ items:2 },
+                    1000:{ items:3 },
+                  }
+                });
+
+              });
+
+            </script>
+          
+          <div class="line nobottommargin"></div>
+        </div>
+  
+
+        <div class="promo promo-light" style="background-color:#083454;">
+          <div class="container  clearfix" style="left: 5%;">   
+            <h3 style="color:#fff;">Entre em contato ainda hoje! </br><span style="color:#ddd;">(11) 2478-4215</span></h3>
+            <span style="color:#fff;">Temos a solução completa para você e para sua empresa. Entendemos de Gente e seus talentos!</span>
+            <a href="contato.html" class="button button-xlarge button-rounded " style="color:#fff;">Comece Agora!</a>
+          </div>
+        </div>
+
+
+        <div class="container clearfix">
+        
+          <div class="line notopmargin"></div>
+
+          <h4 class="center">Nossos Clientes</h4>
+          <div id="oc-clients" class="owl-carousel image-carousel" style="padding-bottom: 30px">
+
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_1.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_2.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_3.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_4.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_5.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_6.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_7.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_8.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_9.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_10.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_11.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_12.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_13.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_14.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_15.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_16.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_17.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_18.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_19.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_20.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_21.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_22.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_23.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_24.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_25.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_26.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_27.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_28.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_29.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_30.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_31.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_32.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_33.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_34.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_35.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_36.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_37.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_38.png" alt="Clients"></a></div>
+            <div class="oc-item"><a href="#"><img src="images/clients/cliente_39.png" alt="Clients"></a></div>
+
+          </div>
+
+          <script type="text/javascript">
+
+            jQuery(document).ready(function($) {
+
+              var ocClients = $("#oc-clients");
+
+              ocClients.owlCarousel({
+                margin: 100,
+                loop: true,
+                nav: true,
+                navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                autoplay: true,
+                dots: true,
+                autoplayHoverPause: true,
+                responsive:{
+                  0:{ items:2 },
+                  480:{ items:3 },
+                  768:{ items:4 },
+                  992:{ items:5 },
+                  1200:{ items:6 }
+                }
+              });
+
+            });
+
+          </script>
+
+        <div class="line notopmargin"></div>
+        <div class="center">
+          <h3>Onde Estamos:</h3>
+          <h4>Rua Helena, 280, Vila Olímpia, Sao Paulo, Brasil</h4>
+        </div>
+        </div>
+        <!-- Google Map
+        ============================================= -->
+          <section id="google-map" class="gmap"></section>
+
+          <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+          <script type="text/javascript" src="js/jquery.gmap.js"></script>
+
+          <script type="text/javascript">
+
+            $('#google-map').gMap({
+
+              address: 'Rua Helena, 280, Sao Paulo, Brazil',
+              maptype: 'ROADMAP',
+              zoom: 16,
+              markers: [
+                {
+                  address: "Rua Helena, 280, Sao Paulo, Brazil",
+                  html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">Olá, somos a <span>DOM Brasil</span></h4><p class="nobottommargin">Somos uma empresa <strong>100% Brasileira</strong>, feita por brasileiros para brasileiros!  A mais completa solução na área de <strong>análise comportamental</strong> - focada na contratação, retenção e <strong>desenvolvimento de talentos</strong>.</p></div>',
+                  icon: {
+                    image: "images/icons/map-icon-red.png",
+                    iconsize: [32, 39],
+                    iconanchor: [13,39]
+                  }
+                }
+              ],
+              doubleclickzoom: false,
+              controls: {
+                panControl: true,
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true,
+                streetViewControl: false,
+                overviewMapControl: false
+              }
+
+            });
+
+          </script><!-- Google Map End -->
+      </div>
+      
+    </section><!-- #content end -->
