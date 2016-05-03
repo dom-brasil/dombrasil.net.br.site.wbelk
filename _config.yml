@@ -1,0 +1,10 @@
+# Site settings
+title: Blog DOM
+email: dom@dombrasil.com.br
+description: "Blog sobre Estratégias de Recursos Humanos (RH)."
+baseurl: ""
+url: "http://www.dombrasil.net.br"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
