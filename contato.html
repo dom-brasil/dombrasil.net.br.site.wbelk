@@ -1,0 +1,167 @@
+---
+layout: default
+---
+
+<!-- Google Map
+============================================= -->
+<section id="google-map" class="gmap slider-parallax"></section>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="/js/jquery.gmap.js"></script>
+
+<script type="text/javascript">
+
+    $('#google-map').gMap({
+
+        address: 'Rua Helena, 280, Sao Paulo, Brazil',
+        maptype: 'ROADMAP',
+        zoom: 16,
+        markers: [
+            {
+                address: "Rua Helena, 280, Sao Paulo, Brazil",
+                html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">Olá, somos a <span>DOM Brasil</span></h4><p class="nobottommargin">Somos uma empresa <strong>100% Brasileira</strong>, feita por brasileiros para brasileiros!  A mais completa solução na área de <strong>análise comportamental</strong> - focada na contratação, retenção e <strong>desenvolvimento de talentos</strong>.</p></div>',
+                icon: {
+                    image: "images/icons/map-icon-red.png",
+                    iconsize: [32, 39],
+                    iconanchor: [13,39]
+                }
+            }
+        ],
+        doubleclickzoom: false,
+        controls: {
+            panControl: true,
+            zoomControl: true,
+            mapTypeControl: true,
+            scaleControl: false,
+            streetViewControl: false,
+            overviewMapControl: false
+        }
+
+    });
+
+</script><!-- Google Map End -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <!-- Postcontent
+            ============================================= -->
+            <div class="postcontent nobottommargin">
+
+                <h3>Entre em contato</h3>
+
+                <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Mensagem Enviada Com Sucesso!"></div>
+
+                <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+
+                    <div class="form-process"></div>
+
+                    <div class="col_one_third">
+                        <label for="template-contactform-name">Seu Nome <small>*</small></label>
+                        <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control required" />
+                    </div>
+
+                    <div class="col_one_third">
+                        <label for="template-contactform-email">Email <small>*</small></label>
+                        <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control" />
+                    </div>
+
+                    <div class="col_one_third col_last">
+                        <label for="template-contactform-phone">Telefone</label>
+                        <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control" />
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="col_two_third">
+                        <label for="template-contactform-subject">Assunto <small>*</small></label>
+                        <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
+                    </div>
+
+                    <div class="col_one_third col_last">
+                        <label for="template-contactform-service">Serviço</label>
+                        <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
+                            <option value="">-- Escolha Um --</option>
+                            <option value="">Análise de Comportamento</option>
+                            <option value="">Consultoria</option>
+                            <option value="">Coaching Cognitivo</option>
+                            <option value="">RSS/Hunting</option>
+                        </select>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="col_full">
+                        <label for="template-contactform-message">Sua Mensagem <small>*</small></label>
+                        <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+                    </div>
+
+                    <div class="col_full hidden">
+                        <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+                    </div>
+
+                    <div class="col_full">
+                        <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Enviar</button>
+                    </div>
+
+                </form>
+
+                <script type="text/javascript">
+
+                    $("#template-contactform").validate({
+                        submitHandler: function(form) {
+                            $('.form-process').fadeIn();
+                            $(form).ajaxSubmit({
+                                target: '#contact-form-result',
+                                success: function() {
+                                    $('.form-process').fadeOut();
+                                    $(form).find('.sm-form-control').val('');
+                                    $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+                                    SEMICOLON.widget.notifications($('#contact-form-result'));
+                                }
+                            });
+                        }
+                    });
+
+                </script>
+
+            </div><!-- .postcontent end -->
+
+            <!-- Sidebar
+            ============================================= -->
+            <div class="sidebar col_last nobottommargin">
+
+                <address>
+                    <strong>Onde Ficamos:</strong><br>
+                    Rua Helena, 280, conj. 705 - Vila Olímpia<br>
+                    São Paulo, Brasil<br>
+                </address>
+                <abbr title="Numero Telefone"><strong>Tel:</strong></abbr> (11) 2478-4215<br>
+                <abbr title="Endereco Email"><strong>Email:</strong></abbr> dom@domdiagnosticos.com.br 
+
+                <div class="widget noborder notoppadding">
+
+                    <a href="#" class="social-icon si-small si-dark si-facebook">
+                        <i class="icon-facebook"></i>
+                        <i class="icon-facebook"></i>
+                    </a>
+
+                    <a href="#" class="social-icon si-small si-dark si-linkedin">
+                        <i class="icon-linkedin"></i>
+                        <i class="icon-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div><!-- .sidebar end -->
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
