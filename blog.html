@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<!-- Content
+============================================= -->
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+
+          </br>
+
+          <div class="heading-block center">
+              <h2>Blog</h2>
+              <span>Recrutamento, desenvolvimento, carreira, etc...<br />Tudo sobre estratégias de Recursos Humanos.</span>
+          </div>   
+
+          <ul class="posts">
+            {% for post in site.posts %}
+              <li>
+                <span class="post-date">{{ post.date | date: "%-d - %m- %Y" }}</span>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+    </div>
+</section><!-- #content end -->
