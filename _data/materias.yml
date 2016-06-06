@@ -58,15 +58,15 @@
     url:    /images/imprensa/domino-163523_1280.jpg
     alt:     
 
-- titulo:    "A presidente da DOM Brasil Diagnósticos, participa da 1ª edição do Liderar Congresso"
-  descricao: ""
-  data:      10/2014
-  fonte:     Blog Bruno Moura
-  url:       http://www.blogdobrunomoura.com.br/v1/2014/10/28/a-presidente-da-dom-brasil-diagnosticos-participa-da-1a-edicao-do-liderar-congresso/
-  tipo:      materia
-  imagem:   
-    url:     /images/imprensa/business-1219868_1280.jpg
-    alt:     
+# - titulo:    "A presidente da DOM Brasil Diagnósticos, participa da 1ª edição do Liderar Congresso"
+#   descricao: ""
+#   data:      10/2014
+#   fonte:     Blog Bruno Moura
+#   url:       http://www.blogdobrunomoura.com.br/v1/2014/10/28/a-presidente-da-dom-brasil-diagnosticos-participa-da-1a-edicao-do-liderar-congresso/
+#   tipo:      materia
+#   imagem:   
+#     url:     /images/imprensa/business-1219868_1280.jpg
+#     alt:     
 
 - titulo:    "Socorro, não tenho sucesso!"
   descricao: "O sucesso não decorre de sorte, como nos lembra o jargão popularíssimo que indica a lua como elemento imprescindível para que ele ocorra."
@@ -98,25 +98,25 @@
     url:     /images/imprensa/office-625893_1920.jpg
     alt:     
 
-- titulo:    "DOM Brasil e Biosev firmam parceria: Recursos Humanos como estratégia de negócio"
-  descricao: ""
-  data:      06/2014
-  fonte:     Blog do Bruno Moura
-  url:       http://www.blogdobrunomoura.com.br/
-  tipo:      materia
-  imagem:   
-    url:     /images/imprensa/working-1219889_1920.jpg
-    alt:     
+# - titulo:    "DOM Brasil e Biosev firmam parceria: Recursos Humanos como estratégia de negócio"
+#   descricao: ""
+#   data:      06/2014
+#   fonte:     Blog do Bruno Moura
+#   url:       http://www.blogdobrunomoura.com.br/
+#   tipo:      materia
+#   imagem:   
+#     url:     /images/imprensa/working-1219889_1920.jpg
+#     alt:     
 
-- titulo:    "DOM Brasil: uma história empreendedora de dedicação e sucesso"
-  descricao: Saiba tudo sobre a história da DOM e como ela surgiu. 
-  data:      03/2014
-  fonte:     Blog Bruno Moura
-  url:       http://www.blogdobrunomoura.com.br/v1/2014/03/11/dom-brasil-uma-historia-empreendedora-de-dedicacao-e-sucesso/
-  tipo:      materia
-  imagem:   
-    url:     /images/imprensa/personal-360200_1920.jpg
-    alt:     
+# - titulo:    "DOM Brasil: uma história empreendedora de dedicação e sucesso"
+#   descricao: Saiba tudo sobre a história da DOM e como ela surgiu. 
+#   data:      03/2014
+#   fonte:     Blog Bruno Moura
+#   url:       http://www.blogdobrunomoura.com.br/v1/2014/03/11/dom-brasil-uma-historia-empreendedora-de-dedicacao-e-sucesso/
+#   tipo:      materia
+#   imagem:   
+#     url:     /images/imprensa/personal-360200_1920.jpg
+#     alt:     
 
 - titulo:    O que é essa tal de complementaridade?
   descricao: "A complementaridade e não complementariedade, como muitos soletram, é uma palavra com diversas aplicações."
