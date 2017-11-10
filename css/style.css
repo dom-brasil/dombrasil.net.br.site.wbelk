@@ -6986,6 +6986,9 @@ body:not(.device-touch) .button.button-full strong {
 	Promo Boxes
 -----------------------------------------------------------------*/
 
+#sobre-ouse {
+	left: 5%;
+}
 
 .promo {
 	position: relative;
