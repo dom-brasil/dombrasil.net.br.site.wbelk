@@ -2861,6 +2861,25 @@ body.side-panel-open:not(.device-xxs):not(.device-xs):not(.device-sm) .body-over
 	right: 50px;
 }
 
+#ouse.popover {
+	position: relative;
+	display: block;
+	margin: 10px;
+	border-radius: 20px;
+	opacity: 0.85;
+	font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+#ouse .popover-title {
+	border-radius: 20px 20px 0 0;
+	font-size: 16px !important;
+}
+
+#ouse .popover-content p{
+	font-size: 16px;
+}
+
 
 /* Slider Arrows
 -----------------------------------------------------------------*/
